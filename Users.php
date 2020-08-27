@@ -5,6 +5,7 @@
     public $cognome;
     public $email;
     public $eta;
+    public $commentare;
 
     public function __construct($_nome, $_cognome)
     {
@@ -23,6 +24,14 @@
     public function getFullName() {
       return $this->nome . ' ' . $this->cognome;
     }
+
+    public function censoredWord($word) {
+      $this->commentare = $word;
+
+      if ($word == 'stronzo') {
+        $this->commentare = '***';
+      }
+    }
   }
-  
+
 ?>
